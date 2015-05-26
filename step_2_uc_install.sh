@@ -3,6 +3,8 @@ su - stack
 
 # different to instack docs, moved up here by maufart, Enable RDO-Manager Trunk
 sudo curl -o /etc/yum.repos.d/rdo-management-trunk.repo http://trunk-mgt.rdoproject.org/centos-kilo/current-passed-ci/delorean-rdo-management.repo
+# If you want pre-CI, use
+# sudo curl -o /etc/yum.repos.d/rdo-management-trunk.repo http://trunk-mgt.rdoproject.org/centos-kilo/current/delorean-rdo-management.repo
 
 sudo yum install -y http://rhos-release.virt.bos.redhat.com/repos/rhos-release/rhos-release-latest.noarch.rpm
 sudo rhos-release 6
