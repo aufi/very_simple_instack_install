@@ -17,7 +17,7 @@ openstack overcloud image create
 openstack baremetal import --json ~/instackenv.json
 openstack baremetal introspection bulk start # TODO: doesn't wait for introspection to finish
 
-# Use this until the above is fixed, then they are all finished.
+# Use this until the above is fixed, then cancel when they are all finished.
 watch openstack baremetal introspection bulk status
 
 instack-ironic-deployment --setup-flavors
