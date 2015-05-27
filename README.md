@@ -14,7 +14,7 @@ Setup
 
 **Not supported anywhere, just developer's notes**
 
-**Last update: 2015-05-26**
+**Last update: 2015-05-27**
 
 **Feel free to contribute!**
 
