@@ -50,12 +50,16 @@ heat stack-delete $ID
 
 # Create a plan and add each role.
 openstack management plan create overcloud
+
+# Get the plan ID with
+openstack plan list
+
+# Get the Role ID's with
 openstack management role list
 
 # TODO: we need to use the abbreviated output here like tuskar plan-add-role does.
-openstack management plan add role $ID
+openstack management plan add role $PLAN_ID $ROLE_ID
 
-openstack plan list
 
 # This will fail, so the --debug flag is handy
 openstack overcloud deploy --plan-uuid $ID --debug
