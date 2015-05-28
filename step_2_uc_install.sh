@@ -24,9 +24,3 @@ sudo yum install -y python-rdomanager-oscplugin
 
 openstack undercloud install
 
-# Is it needed?
-# sudo cp /root/tripleo-undercloud-passwords .
-# sudo chown $USER: tripleo-undercloud-passwords
-# sudo cp /root/stackrc .
-# sudo chown $USER: stackrcudo chown $USER: stackrc
-
