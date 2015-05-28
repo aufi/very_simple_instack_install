@@ -23,13 +23,12 @@ openstack overcloud image build --all
 openstack overcloud image upload
 
 openstack baremetal import --json ~/instackenv.json
+openstack baremetal configure boot
 
 # If this command doesn't wait for introspection to finish. Use watch to wait
 # for it to finish before continuing.
 #    watch openstack baremetal introspection bulk status
 openstack baremetal introspection bulk start
-
-openstack baremetal configure boot
 
 openstack flavor create --id auto --ram 4096 --disk 40 --vcpus 1 baremetal
 openstack flavor set --property "cpu_arch"="x86_64" --property "capabilities:boot_option"="local" baremetal
