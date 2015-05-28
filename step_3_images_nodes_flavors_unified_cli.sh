@@ -40,3 +40,22 @@ openstack flavor set --property "cpu_arch"="x86_64" --property "capabilities:boo
 # openstack server list
 # openstack server show $ID (picking an from above that is in ERROR state)
 openstack overcloud deploy --use-tripleo-heat-templates
+
+
+# -- If that worked. Now we can try Tuskar...
+
+# Find and delete the current stack
+heat stack-list
+heat stack-delete $ID
+
+# Create a plan and add each role.
+openstack management plan create overcloud
+openstack management role list
+
+# TODO: we need to use the abbreviated output here like tuskar plan-add-role does.
+openstack management plan add role $ID
+
+openstack plan list
+
+# This will fail, so the --debug flag is handy
+openstack overcloud deploy --plan-uuid $ID --debug
