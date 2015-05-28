@@ -4,10 +4,11 @@ su - stack
 sudo rpm -ivh http://rhos-release.virt.bos.redhat.com/repos/rhos-release/rhos-release-latest.noarch.rpm
 
 # Enable either poodles or puddles:
-# To enable poodles:
+# To enable poodles: CHOOSE
 sudo rhos-release 7-director -d
 # To enable puddles:
-sudo rhos-release 7-director
+# sudo rhos-release 7-director
+
 
 # We need openwsman-python from the optional repo
 sudo yum install -y yum-utils
