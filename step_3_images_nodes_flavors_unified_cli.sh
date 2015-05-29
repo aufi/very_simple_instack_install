@@ -50,3 +50,10 @@ openstack management plan list
 
 # This will fail, so the --debug flag is handy
 openstack overcloud deploy --plan-uuid $ID --debug
+
+# Perform post config
+# This needs to be replaced with 'openstack overcloud endpoint show'
+OVERCLOUD_ENDPOINT=$(heat output-show overcloud KeystoneURL|sed 's/^"\(.*\)"$/\1/')
+export OVERCLOUD_IP=$(echo $OVERCLOUD_ENDPOINT | awk -F '[/:]' '{print $4}')
+source overcloudrc
+openstack overcloud deploy postconfig $OVERCLOUD_IP
