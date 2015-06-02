@@ -15,6 +15,7 @@ export DIB_YUM_REPO_CONF="/etc/yum.repos.d/rhos-release-7-director-rhel-7.1.repo
 
 # If this fails and you are on RHEL this should work:
 #   openstack overcloud image build --all --run-rhos-release
+# or export RUN_RHOS_RELEASE=1
 # This is merged but may not be packaged.
 openstack overcloud image build --all
 
