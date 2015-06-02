@@ -56,4 +56,4 @@ openstack overcloud deploy --plan-uuid $ID --debug
 OVERCLOUD_ENDPOINT=$(heat output-show overcloud KeystoneURL|sed 's/^"\(.*\)"$/\1/')
 export OVERCLOUD_IP=$(echo $OVERCLOUD_ENDPOINT | awk -F '[/:]' '{print $4}')
 source overcloudrc
-openstack overcloud deploy postconfig $OVERCLOUD_IP
+openstack overcloud postconfig $OVERCLOUD_IP
