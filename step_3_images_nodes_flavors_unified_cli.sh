@@ -46,11 +46,8 @@ openstack overcloud deploy --use-tripleo-heat-templates
 
 # WITH TUSKAR
 
-# Get the plan ID with
-openstack management plan list
-
 # This will fail, so the --debug flag is handy
-openstack overcloud deploy --plan-uuid $ID --debug
+openstack overcloud deploy --plan overcloud --debug
 
 # Perform post config
 # This needs to be replaced with 'openstack overcloud endpoint show'
