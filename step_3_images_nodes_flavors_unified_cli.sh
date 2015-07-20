@@ -1,17 +1,16 @@
 # https://repos.fedorapeople.org/repos/openstack-m/docs/internal/master/basic_deployment/basic_deployment.html
-# unified CLI alternative
 su - stack
 
 source stackrc
 
-export NODE_DIST=rhel7
-
-curl -O http://download.devel.redhat.com/brewroot/packages/rhel-guest-image/7.1/20150224.0/images/rhel-guest-image-7.1-20150224.0.x86_64.qcow2
-export DIB_LOCAL_IMAGE=rhel-guest-image-7.1-20150224.0.x86_64.qcow2
+IMAGE=http://download.devel.redhat.com/brewroot/packages/rhel-guest-image/7.1/20150224.0/images/rhel-guest-image-7.1-20150224.0.x86_64.qcow2
+curl -O $IMAGE
+export DIB_LOCAL_IMAGE=`basename $IMAGE`
 # Enable RHOS
 export USE_DELOREAN_TRUNK=0
 export RHOS=1
 export DIB_YUM_REPO_CONF="/etc/yum.repos.d/rhos-release-7-director-rhel-7.1.repo /etc/yum.repos.d/rhos-release-7-rhel-7.1.repo"
+
 
 # If this fails and you are on RHEL this should work:
 #   openstack overcloud image build --all --run-rhos-release
@@ -33,6 +32,10 @@ openstack baremetal introspection bulk start
 
 openstack flavor create --id auto --ram 4096 --disk 40 --vcpus 1 baremetal
 openstack flavor set --property "cpu_arch"="x86_64" --property "capabilities:boot_option"="local" baremetal
+
+# List the available subnets
+neutron subnet-list
+# DIY: neutron subnet-update <subnet-uuid> --dns-nameserver <nameserver-ip>
 
 # -- Now we are ready to deploy!
 
