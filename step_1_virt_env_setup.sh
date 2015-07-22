@@ -30,6 +30,7 @@ sudo yum-config-manager --enable rhelosp-rhel-7-server-opt
 sudo yum install -y instack-undercloud
 
 IMAGE=http://download.devel.redhat.com/brewroot/packages/rhel-guest-image/7.1/20150224.0/images/rhel-guest-image-7.1-20150224.0.x86_64.qcow2
+curl -I $IMAGE  # get headers to ensure connection
 curl -O $IMAGE
 export DIB_LOCAL_IMAGE=`basename $IMAGE`
 export DIB_YUM_REPO_CONF="/etc/yum.repos.d/rhos-release-7-director-rhel-7.1.repo /etc/yum.repos.d/rhos-release-7-rhel-7.1.repo"
