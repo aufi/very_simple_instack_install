@@ -36,6 +36,9 @@ export DIB_LOCAL_IMAGE=`basename $IMAGE`
 export DIB_YUM_REPO_CONF="/etc/yum.repos.d/rhos-release-7-director-rhel-7.1.repo /etc/yum.repos.d/rhos-release-7-rhel-7.1.repo"
 
 # additional setup, e.g. export NODE_COUNT=3 for ceph 
+# For network isolation:
+# export NODE_COUNT=9
+# export TESTENV_ARGS="--baremetal-bridge-names 'brbm' --vlan-trunk-ids='10 20 30 40 50'"
 
 instack-virt-setup
 
