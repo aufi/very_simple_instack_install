@@ -13,3 +13,4 @@ sudo rhos-release 7-director
 sudo yum install -y python-rdomanager-oscplugin
 
 openstack undercloud install
+
