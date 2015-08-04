@@ -45,7 +45,7 @@ neutron subnet-list
 
 # THT ONLY
 
-openstack overcloud deploy --use-tripleo-heat-templates
+openstack overcloud deploy --templates
 
 # WITH TUSKAR
 
