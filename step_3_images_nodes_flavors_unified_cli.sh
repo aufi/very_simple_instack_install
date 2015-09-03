@@ -45,12 +45,12 @@ neutron subnet-list
 
 # THT ONLY
 
-openstack overcloud deploy --templates
+openstack overcloud deploy --templates --libvirt-type=qemu
 
 # WITH TUSKAR
 
 # This will fail, so the --debug flag is handy
-openstack overcloud deploy --plan overcloud --debug
+openstack overcloud deploy --plan overcloud --libvirt-type=qemu --debug
 
 # Perform post config
 # This needs to be replaced with 'openstack overcloud endpoint show'
