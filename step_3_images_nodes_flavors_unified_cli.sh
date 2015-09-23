@@ -46,6 +46,7 @@ neutron subnet-list
 # THT ONLY
 
 openstack overcloud deploy --templates --libvirt-type=qemu
+# openstack overcloud deploy --templates --libvirt-type=qemu --ceph-storage-scale 1 -e /usr/share/openstack-tripleo-heat-templates/environments/storage-environment.yaml --compute-scale 2
 
 # WITH TUSKAR
 
