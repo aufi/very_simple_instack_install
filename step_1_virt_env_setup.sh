@@ -19,7 +19,7 @@ sudo yum install -y yum-utils
 sudo yum-config-manager --enable rhelosp-rhel-7-server-opt
 
 # Enable extra packages
-#sudo yum install -y https://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-5.noarch.rpm
+#sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 
 # Enable RDO Kilo
 #sudo yum install -y https://rdoproject.org/repos/openstack-kilo/rdo-release-kilo.rpm
