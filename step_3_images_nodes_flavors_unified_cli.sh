@@ -9,7 +9,7 @@ export DIB_LOCAL_IMAGE=`basename $IMAGE`
 # Enable RHOS
 export USE_DELOREAN_TRUNK=0
 export RHOS=1
-export DIB_YUM_REPO_CONF="/etc/yum.repos.d/rhos-release-7-director-rhel-7.1.repo /etc/yum.repos.d/rhos-release-7-rhel-7.1.repo"
+export DIB_YUM_REPO_CONF="/etc/yum.repos.d/rhos-release-7-director.repo  /etc/yum.repos.d/rhos-release-rhel-7.1.repo"
 
 
 # If this fails and you are on RHEL this should work:
