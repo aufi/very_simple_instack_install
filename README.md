@@ -1,6 +1,12 @@
 Very quick instack lab install
 ==============================
 
+**UPDATE:**
+
+**Use http://docs.openstack.org/developer/tripleo-docs/environments/virtual.html and https://github.com/openstack/tripleo-common/blob/master/scripts/tripleo.sh**
+
+OUTDATED BELLOW
+---------------
 RHOS virtual environment for lab machine with RHEL7.1 server, shortened version of https://repos.fedorapeople.org/repos/openstack-m/docs/internal/master/installation/installing.html
 
 Setup
